@@ -2,8 +2,16 @@
 This repo provides code to perform video shot detection and extract middle, beginning and end frames for each shot.
 
 ## Dependencies
-You should only need to install PyAV library, which will install other required dependencies. 
-``` conda install av -c conda-forge ```
+The most robust way to run the code (with reproducible results) is getting certain specific versions of the required libraries. For example, different ffmpeg versions may drop different frames at the start of the video (producing different results if different versions are use). Specifically, to install the exact versions of the dependencies you can create a conda environment as:  
+``` 
+conda create --name shot_detect python=3.6
+conda activate shot_detect
+conda install -c conda-forge opencv=3.1.0
+# cuda is required for compiling with opencv
+conda install cudatoolkit=9.0 -c pytorch
+conda install av==0.4.0 -c conda-forge
+conda install ffmpeg==2.8.6 -c conda-forge
+```
 
 The code has been tested om python 3.6
 
