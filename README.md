@@ -55,7 +55,10 @@ python dump_frames_of_shot.py --video_fname input_file.mp4 --dfd_path output_fil
 ```
 
 ## Tips and tricks
-If you want to enable parallel processing (of block matching) with OPENMP, please add `-fopenmp` to the `CMAKE_CXX_FLAGS`.
+If you want to enable parallel processing (of block matching) with OPENMP, please add `-fopenmp` to the `CMAKE_CXX_FLAGS`. Adding the next line to CMakeLists.txt.
+```
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
+```
 
 ## Licence and citations
 The code is based on `CVHCI/Okapi` library for processing of images.
